@@ -1,0 +1,147 @@
+Remarks hexane_CNS.top created by acpype (v: 2021-02-05T22:15:50CET) on Mon Apr  3 23:43:43 2023
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS c3_     12.010
+MASS hc_      1.008
+
+RESIdue HEX
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM C1    TYPE= c3_   CHARGE=  -0.0931 END
+ATOM C2    TYPE= c3_   CHARGE=  -0.0804 END
+ATOM H1    TYPE= hc_   CHARGE=   0.0327 END
+ATOM H3    TYPE= hc_   CHARGE=   0.0327 END
+ATOM H4    TYPE= hc_   CHARGE=   0.0327 END
+ATOM C4    TYPE= c3_   CHARGE=  -0.0794 END
+ATOM H2    TYPE= hc_   CHARGE=   0.0387 END
+ATOM H8    TYPE= hc_   CHARGE=   0.0387 END
+ATOM C5    TYPE= c3_   CHARGE=  -0.0794 END
+ATOM H9    TYPE= hc_   CHARGE=   0.0387 END
+ATOM H10   TYPE= hc_   CHARGE=   0.0387 END
+ATOM C6    TYPE= c3_   CHARGE=  -0.0804 END
+ATOM H11   TYPE= hc_   CHARGE=   0.0387 END
+ATOM H12   TYPE= hc_   CHARGE=   0.0387 END
+ATOM C3    TYPE= c3_   CHARGE=  -0.0931 END
+ATOM H13   TYPE= hc_   CHARGE=   0.0387 END
+ATOM H14   TYPE= hc_   CHARGE=   0.0387 END
+ATOM H5    TYPE= hc_   CHARGE=   0.0327 END
+ATOM H6    TYPE= hc_   CHARGE=   0.0327 END
+ATOM H7    TYPE= hc_   CHARGE=   0.0327 END
+
+{ Bonds: atomName1  atomName2 }
+BOND C1    H1   
+BOND C1    H3   
+BOND C1    H4   
+BOND C2    H2   
+BOND C2    H8   
+BOND C4    H9   
+BOND C4    H10  
+BOND C5    H11  
+BOND C5    H12  
+BOND C6    H13  
+BOND C6    H14  
+BOND C3    H5   
+BOND C3    H6   
+BOND C3    H7   
+BOND C1    C2   
+BOND C2    C4   
+BOND C4    C5   
+BOND C5    C6   
+BOND C6    C3   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe C1    C2    H2   
+ANGLe C1    C2    H8   
+ANGLe C2    C1    H1   
+ANGLe C2    C1    H3   
+ANGLe C2    C1    H4   
+ANGLe C2    C4    H9   
+ANGLe C2    C4    H10  
+ANGLe H1    C1    H3   
+ANGLe H1    C1    H4   
+ANGLe H3    C1    H4   
+ANGLe C4    C2    H2   
+ANGLe C4    C2    H8   
+ANGLe C4    C5    H11  
+ANGLe C4    C5    H12  
+ANGLe H2    C2    H8   
+ANGLe C5    C4    H9   
+ANGLe C5    C4    H10  
+ANGLe C5    C6    H13  
+ANGLe C5    C6    H14  
+ANGLe H9    C4    H10  
+ANGLe C6    C5    H11  
+ANGLe C6    C5    H12  
+ANGLe C6    C3    H5   
+ANGLe C6    C3    H6   
+ANGLe C6    C3    H7   
+ANGLe H11   C5    H12  
+ANGLe C3    C6    H13  
+ANGLe C3    C6    H14  
+ANGLe H13   C6    H14  
+ANGLe H5    C3    H6   
+ANGLe H5    C3    H7   
+ANGLe H6    C3    H7   
+ANGLe C1    C2    C4   
+ANGLe C2    C4    C5   
+ANGLe C4    C5    C6   
+ANGLe C5    C6    C3   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral C1    C2    C4    H9   
+DIHEdral C1    C2    C4    H10  
+DIHEdral C2    C4    C5    H11  
+DIHEdral C2    C4    C5    H12  
+DIHEdral H1    C1    C2    C4   
+DIHEdral H1    C1    C2    H2   
+DIHEdral H1    C1    C2    H8   
+DIHEdral H3    C1    C2    C4   
+DIHEdral H3    C1    C2    H2   
+DIHEdral H3    C1    C2    H8   
+DIHEdral H4    C1    C2    C4   
+DIHEdral H4    C1    C2    H2   
+DIHEdral H4    C1    C2    H8   
+DIHEdral C4    C5    C6    H13  
+DIHEdral C4    C5    C6    H14  
+DIHEdral H2    C2    C4    C5   
+DIHEdral H2    C2    C4    H9   
+DIHEdral H2    C2    C4    H10  
+DIHEdral H8    C2    C4    C5   
+DIHEdral H8    C2    C4    H9   
+DIHEdral H8    C2    C4    H10  
+DIHEdral C5    C6    C3    H5   
+DIHEdral C5    C6    C3    H6   
+DIHEdral C5    C6    C3    H7   
+DIHEdral H9    C4    C5    C6   
+DIHEdral H9    C4    C5    H11  
+DIHEdral H9    C4    C5    H12  
+DIHEdral H10   C4    C5    C6   
+DIHEdral H10   C4    C5    H11  
+DIHEdral H10   C4    C5    H12  
+DIHEdral H11   C5    C6    C3   
+DIHEdral H11   C5    C6    H13  
+DIHEdral H11   C5    C6    H14  
+DIHEdral H12   C5    C6    C3   
+DIHEdral H12   C5    C6    H13  
+DIHEdral H12   C5    C6    H14  
+DIHEdral H13   C6    C3    H5   
+DIHEdral H13   C6    C3    H6   
+DIHEdral H13   C6    C3    H7   
+DIHEdral H14   C6    C3    H5   
+DIHEdral H14   C6    C3    H6   
+DIHEdral H14   C6    C3    H7   
+DIHEdral C1    C2    C4    C5   
+DIHEdral C2    C4    C5    C6   
+DIHEdral C4    C5    C6    C3   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+
+END {RESIdue HEX}
+
+set echo=true end
