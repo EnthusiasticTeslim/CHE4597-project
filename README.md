@@ -8,7 +8,7 @@ Surfactants are molecules that have both hydrophobic and hydrophilic properties.
 Cationic surfactants have a positively charged head group, whereas anionic surfactants have a negatively charged head group. The difference in the charge of the head group can significantly affect the interfacial properties of the surfactant and, therefore, the behavior of the system at the interface.
 
 ## Methodology
-The project will use molecular dynamics simulations to investigate the interfacial dynamics of cationic and anionic surfactants at the interface of oil and water. The simulations will be performed using GROMACS, a molecular dynamics software package. The surfactant molecules will be placed at the interface of the oil and water, and the system will be equilibrated using NPT and NVT ensembles. The surface tension and interfacial tension will be calculated using the Irving-Kirkwood method. The formation of micelles will be analyzed using clustering algorithms.
+The project will use molecular dynamics simulations to investigate the interfacial dynamics of cationic and anionic surfactants at the interface of oil and water. The simulations will be performed using GROMACS, a molecular dynamics software package. The surfactant molecules will be placed at the interface of the oil and water, and the system will be equilibrated using NPT and NVT ensembles. The surface tension and interfacial tension will be calculated using the Irving-Kirkwood method. 
 
 ## Project Structure
 The project will have the following structure:
