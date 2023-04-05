@@ -13,38 +13,38 @@
 
 [ atoms ]
 ;   nr  type  resi  res  atom  cgnr     charge      mass       ; qtot   bond_type
-     1 opls_135     1   CAT    C1    1    -0.097100     12.01100 ; qtot -0.097  CT  
-     2 opls_135     1   CAT    C2    2    -0.079400     12.01100 ; qtot -0.176  CT  
-     3 opls_140     1   CAT    H1    3     0.043700      1.00800 ; qtot -0.133  HC  
-     4 opls_140     1   CAT    H1    4     0.043700      1.00800 ; qtot -0.089  HC  
-     5 opls_140     1   CAT    H1    5     0.043700      1.00800 ; qtot -0.045  HC  
-     6 opls_135     1   CAT    C2    6    -0.082400     12.01100 ; qtot -0.128  CT  
-     7 opls_140     1   CAT    H2    7     0.041200      1.00800 ; qtot -0.087  HC  
-     8 opls_140     1   CAT    H2    8     0.041200      1.00800 ; qtot -0.045  HC  
-     9 opls_135     1   CAT    C2    9    -0.088400     12.01100 ; qtot -0.134  CT  
-    10 opls_140     1   CAT    H2   10     0.053200      1.00800 ; qtot -0.081  HC  
-    11 opls_140     1   CAT    H2   11     0.053200      1.00800 ; qtot -0.027  HC  
-    12 opls_135     1   CAT    C2   12    -0.109400     12.01100 ; qtot -0.137  CT  
-    13 opls_140     1   CAT    H2   13     0.041200      1.00800 ; qtot -0.096  HC  
-    14 opls_140     1   CAT    H2   14     0.041200      1.00800 ; qtot -0.054  HC  
-    15 opls_135     1   CAT    C3   15     0.116800     12.01100 ; qtot  0.062  CT  
-    16 opls_140     1   CAT    H2   16     0.082700      1.00800 ; qtot  0.145  HC  
-    17 opls_140     1   CAT    H2   17     0.082700      1.00800 ; qtot  0.228  HC  
-    18 opls_140     1   CAT    H3   18     0.097700      1.00800 ; qtot  0.325  HC  
-    19 opls_140     1   CAT    H3   19     0.097700      1.00800 ; qtot  0.423  HC  
-    20 opls_287     1   CAT    N1   20    -0.602797     14.00670 ; qtot -0.180  N3  
-    21 opls_135     1   CAT    C4   21     0.087433     12.01100 ; qtot -0.092  CT  
-    22 opls_140     1   CAT    H4   22     0.101922      1.00800 ; qtot  0.010  HC  
-    23 opls_140     1   CAT    H4   23     0.101922      1.00800 ; qtot  0.112  HC  
-    24 opls_140     1   CAT    H4   24     0.101922      1.00800 ; qtot  0.214  HC  
-    25 opls_135     1   CAT    C4   25     0.087433     12.01100 ; qtot  0.301  CT  
-    26 opls_140     1   CAT    H4   26     0.101922      1.00800 ; qtot  0.403  HC  
-    27 opls_140     1   CAT    H4   27     0.101922      1.00800 ; qtot  0.505  HC  
-    28 opls_140     1   CAT    H4   28     0.101922      1.00800 ; qtot  0.607  HC  
-    29 opls_135     1   CAT    C4   29     0.087433     12.01100 ; qtot  0.694  CT  
-    30 opls_140     1   CAT    H4   30     0.101922      1.00800 ; qtot  0.796  HC  
-    31 opls_140     1   CAT    H4   31     0.101922      1.00800 ; qtot  0.898  HC  
-    32 opls_140     1   CAT    H4   32     0.101922      1.00800 ; qtot  1.000  HC  
+     1 opls_136     1   CAT    C1    1    -0.180000     12.01100 ; qtot -0.097  CT  
+     2 opls_136     1   CAT    C2    2    -0.120000     12.01100 ; qtot -0.176  CT  
+     3 opls_140     1   CAT    H1    3     0.060000      1.00800 ; qtot -0.133  HC  
+     4 opls_140     1   CAT    H1    4     0.060000      1.00800 ; qtot -0.089  HC  
+     5 opls_140     1   CAT    H1    5     0.060000      1.00800 ; qtot -0.045  HC  
+     6 opls_136     1   CAT    C2    6    -0.120000     12.01100 ; qtot -0.128  CT  
+     7 opls_140     1   CAT    H2    7     0.060000      1.00800 ; qtot -0.087  HC  
+     8 opls_140     1   CAT    H2    8     0.060000      1.00800 ; qtot -0.045  HC  
+     9 opls_136     1   CAT    C2    9    -0.120000     12.01100 ; qtot -0.134  CT  
+    10 opls_140     1   CAT    H2   10     0.060000      1.00800 ; qtot -0.081  HC  
+    11 opls_140     1   CAT    H2   11     0.060000      1.00800 ; qtot -0.027  HC  
+    12 opls_136     1   CAT    C2   12    -0.120000     12.01100 ; qtot -0.137  CT  
+    13 opls_140     1   CAT    H2   13     0.060000      1.00800 ; qtot -0.096  HC  
+    14 opls_140     1   CAT    H2   14     0.060000      1.00800 ; qtot -0.054  HC  
+    15 opls_908     1   CAT    C3   15     0.130000     12.01100 ; qtot  0.062  CT  
+    16 opls_140     1   CAT    H2   16     0.060000      1.00800 ; qtot  0.145  HC  
+    17 opls_140     1   CAT    H2   17     0.060000      1.00800 ; qtot  0.228  HC  
+    18 opls_911     1   CAT    H3   18     0.060000      1.00800 ; qtot  0.325  HC  
+    19 opls_911     1   CAT    H3   19     0.060000      1.00800 ; qtot  0.423  HC  
+    20 opls_288     1   CAT    N1   20     0.000000     14.00670 ; qtot -0.180  N3  
+    21 opls_905     1   CAT    C4   21     0.070000     12.01100 ; qtot -0.092  CT  
+    22 opls_911     1   CAT    H4   22     0.060000      1.00800 ; qtot  0.010  HC  
+    23 opls_911     1   CAT    H4   23     0.060000      1.00800 ; qtot  0.112  HC  
+    24 opls_911     1   CAT    H4   24     0.060000      1.00800 ; qtot  0.214  HC  
+    25 opls_905     1   CAT    C4   25     0.070000     12.01100 ; qtot  0.301  CT  
+    26 opls_911     1   CAT    H4   26     0.060000      1.00800 ; qtot  0.403  HC  
+    27 opls_911     1   CAT    H4   27     0.060000      1.00800 ; qtot  0.505  HC  
+    28 opls_911     1   CAT    H4   28     0.060000      1.00800 ; qtot  0.607  HC  
+    29 opls_905     1   CAT    C4   29     0.070000     12.01100 ; qtot  0.694  CT  
+    30 opls_911     1   CAT    H4   30     0.060000      1.00800 ; qtot  0.796  HC  
+    31 opls_911     1   CAT    H4   31     0.060000      1.00800 ; qtot  0.898  HC  
+    32 opls_911     1   CAT    H4   32     0.060000      1.00800 ; qtot  1.000  HC  
 
 [ bonds ]
 ;   ai     aj funct   r             k

@@ -1,0 +1,15 @@
+;
+#include "oplsaa.ff/forcefield.itp"
+#include "../forcefield/C-C_long_dihs.itp"
+#include "oplsaa.ff/spce.itp"
+
+[ system ]
+; Name
+Hexane Water Interface 
+
+[ molecules ]
+; Compound #mols
+
+SOL 52
+HEX 23
+SOL 52

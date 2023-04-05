@@ -11,26 +11,26 @@
 
 [ atoms ]
 ;   nr  type  resi  res  atom  cgnr     charge      mass       ; qtot   bond_type
-     1 opls_135     1   HEX    C1    1    -0.093100     12.01100 ; qtot -0.093  CT  
-     2 opls_135     1   HEX    C2    2    -0.080400     12.01100 ; qtot -0.173  CT  
-     3 opls_140     1   HEX    H1    3     0.032700      1.00800 ; qtot -0.141  HC  
-     4 opls_140     1   HEX    H1    4     0.032700      1.00800 ; qtot -0.108  HC  
-     5 opls_140     1   HEX    H1    5     0.032700      1.00800 ; qtot -0.075  HC  
-     6 opls_135     1   HEX    C2    6    -0.079400     12.01100 ; qtot -0.155  CT  
-     7 opls_140     1   HEX    H2    7     0.038700      1.00800 ; qtot -0.116  HC  
-     8 opls_140     1   HEX    H2    8     0.038700      1.00800 ; qtot -0.077  HC  
-     9 opls_135     1   HEX    C2    9    -0.079400     12.01100 ; qtot -0.157  CT  
-    10 opls_140     1   HEX    H2   10     0.038700      1.00800 ; qtot -0.118  HC  
-    11 opls_140     1   HEX    H2   11     0.038700      1.00800 ; qtot -0.079  HC  
-    12 opls_135     1   HEX    C6   12    -0.080400     12.01100 ; qtot -0.160  CT  
-    13 opls_140     1   HEX    H2   13     0.038700      1.00800 ; qtot -0.121  HC  
-    14 opls_140     1   HEX    H2   14     0.038700      1.00800 ; qtot -0.082  HC  
-    15 opls_135     1   HEX    C1   15    -0.093100     12.01100 ; qtot -0.175  CT  
-    16 opls_140     1   HEX    H2   16     0.038700      1.00800 ; qtot -0.137  HC  
-    17 opls_140     1   HEX    H2   17     0.038700      1.00800 ; qtot -0.098  HC  
-    18 opls_140     1   HEX    H1   18     0.032700      1.00800 ; qtot -0.065  HC  
-    19 opls_140     1   HEX    H1   19     0.032700      1.00800 ; qtot -0.033  HC  
-    20 opls_140     1   HEX    H1   20     0.032700      1.00800 ; qtot  0.000  HC  
+     1 opls_135     1   HEX    C1    1    -0.180000     12.01100 ; qtot -0.093  CT  
+     2 opls_136     1   HEX    C2    2    -0.120000     12.01100 ; qtot -0.173  CT  
+     3 opls_140     1   HEX    H1    3     0.060000      1.00800 ; qtot -0.141  HC  
+     4 opls_140     1   HEX    H1    4     0.060000      1.00800 ; qtot -0.108  HC  
+     5 opls_140     1   HEX    H1    5     0.060000      1.00800 ; qtot -0.075  HC  
+     6 opls_136     1   HEX    C2    6    -0.120000     12.01100 ; qtot -0.155  CT  
+     7 opls_140     1   HEX    H2    7     0.060000      1.00800 ; qtot -0.116  HC  
+     8 opls_140     1   HEX    H2    8     0.060000      1.00800 ; qtot -0.077  HC  
+     9 opls_136     1   HEX    C2    9    -0.120000     12.01100 ; qtot -0.157  CT  
+    10 opls_140     1   HEX    H2   10     0.060000      1.00800 ; qtot -0.118  HC  
+    11 opls_140     1   HEX    H2   11     0.060000      1.00800 ; qtot -0.079  HC  
+    12 opls_136     1   HEX    C2   12    -0.120000     12.01100 ; qtot -0.160  CT  
+    13 opls_140     1   HEX    H2   13     0.060000      1.00800 ; qtot -0.121  HC  
+    14 opls_140     1   HEX    H2   14     0.060000      1.00800 ; qtot -0.082  HC  
+    15 opls_135     1   HEX    C1   15    -0.180000     12.01100 ; qtot -0.175  CT  
+    16 opls_140     1   HEX    H2   16     0.060000      1.00800 ; qtot -0.137  HC  
+    17 opls_140     1   HEX    H2   17     0.060000      1.00800 ; qtot -0.098  HC  
+    18 opls_140     1   HEX    H1   18     0.060000      1.00800 ; qtot -0.065  HC  
+    19 opls_140     1   HEX    H1   19     0.060000      1.00800 ; qtot -0.033  HC  
+    20 opls_140     1   HEX    H1   20     0.060000      1.00800 ; qtot  0.000  HC  
 
 [ bonds ]
 ;   ai     aj funct   r             k

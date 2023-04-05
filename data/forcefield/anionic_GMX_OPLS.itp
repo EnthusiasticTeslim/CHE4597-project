@@ -15,30 +15,30 @@
 
 [ atoms ]
 ;   nr  type  resi  res  atom  cgnr     charge      mass       ; qtot   bond_type
-     1 opls_135     1   ANI    C1    1    -0.089100     12.01100 ; qtot -0.089  CT  
-     2 opls_135     1   ANI    C2    2    -0.082400     12.01100 ; qtot -0.171  CT  
-     3 opls_140     1   ANI    H1    3     0.023033      1.00800 ; qtot -0.148  HC  
-     4 opls_140     1   ANI    H1    4     0.023033      1.00800 ; qtot -0.125  HC  
-     5 opls_140     1   ANI    H1    5     0.023033      1.00800 ; qtot -0.102  HC  
-     6 opls_135     1   ANI    C2    6    -0.075400     12.01100 ; qtot -0.178  CT  
-     7 opls_140     1   ANI    H2    7     0.040700      1.00800 ; qtot -0.137  HC  
-     8 opls_140     1   ANI    H2    8     0.040700      1.00800 ; qtot -0.096  HC  
-     9 opls_135     1   ANI    C2    9    -0.079400     12.01100 ; qtot -0.176  CT  
-    10 opls_140     1   ANI    H2   10     0.026700      1.00800 ; qtot -0.149  HC  
-    11 opls_140     1   ANI    H2   11     0.026700      1.00800 ; qtot -0.122  HC  
-    12 opls_135     1   ANI    C2   12    -0.083400     12.01100 ; qtot -0.206  CT  
-    13 opls_140     1   ANI    H2   13     0.056200      1.00800 ; qtot -0.150  HC  
-    14 opls_140     1   ANI    H2   14     0.056200      1.00800 ; qtot -0.093  HC  
-    15 opls_135     1   ANI    CS   15     0.203400     12.01100 ; qtot  0.110  CT  
-    16 opls_140     1   ANI    H2   16     0.019200      1.00800 ; qtot  0.129  HC  
-    17 opls_140     1   ANI    H2   17     0.019200      1.00800 ; qtot  0.148  HC  
-    18 opls_140     1   ANI    HS   18    -0.013800      1.00800 ; qtot  0.135  HC  
-    19 opls_140     1   ANI    HS   19    -0.013800      1.00800 ; qtot  0.121  HC  
-    20 opls_xxx     1   ANI    OS   20    -0.529498      0.00000 ; qtot -0.409  x   
-    21 opls_xxx     1   ANI    S1   21     0.356300      0.00000 ; qtot -0.052  x   
-    22 opls_236     1   ANI    O1   22    -0.315867     15.99940 ; qtot -0.368  O   
-    23 opls_236     1   ANI    O1   23    -0.315867     15.99940 ; qtot -0.684  O   
-    24 opls_236     1   ANI    O1   24    -0.315867     15.99940 ; qtot -1.000  O   
+     1 opls_135     1   ANI    C1    1    -0.180000     12.01100 ; qtot -0.089  CT  
+     2 opls_136     1   ANI    C2    2    -0.120000     12.01100 ; qtot -0.171  CT  
+     3 opls_140     1   ANI    H1    3     0.060000      1.00800 ; qtot -0.148  HC  
+     4 opls_140     1   ANI    H1    4     0.060000      1.00800 ; qtot -0.125  HC  
+     5 opls_140     1   ANI    H1    5     0.060000      1.00800 ; qtot -0.102  HC  
+     6 opls_136     1   ANI    C2    6    -0.120000     12.01100 ; qtot -0.178  CT  
+     7 opls_140     1   ANI    H2    7     0.060000      1.00800 ; qtot -0.137  HC  
+     8 opls_140     1   ANI    H2    8     0.060000      1.00800 ; qtot -0.096  HC  
+     9 opls_136     1   ANI    C2    9    -0.120000     12.01100 ; qtot -0.176  CT  
+    10 opls_140     1   ANI    H2   10     0.060000      1.00800 ; qtot -0.149  HC  
+    11 opls_140     1   ANI    H2   11     0.060000      1.00800 ; qtot -0.122  HC  
+    12 opls_136     1   ANI    C2   12    -0.120000     12.01100 ; qtot -0.206  CT  
+    13 opls_140     1   ANI    H2   13     0.060000      1.00800 ; qtot -0.150  HC  
+    14 opls_140     1   ANI    H2   14     0.060000      1.00800 ; qtot -0.093  HC  
+    15 opls_443     1   ANI    CS   15     0.017000     12.01100 ; qtot  0.110  CT  
+    16 opls_140     1   ANI    H2   16     0.060000      1.00800 ; qtot  0.129  HC  
+    17 opls_140     1   ANI    H2   17     0.060000      1.00800 ; qtot  0.148  HC  
+    18 opls_444     1   ANI    HS   18     0.060000      1.00800 ; qtot  0.135  HC  
+    19 opls_444     1   ANI    HS   19     0.060000      1.00800 ; qtot  0.121  HC  
+    20 OS_DS        1   ANI    OS   20    -0.459000      0.00000 ; qtot -0.409  x   
+    21 S_DS         1   ANI    S1   21     1.284000      0.00000 ; qtot -0.052  x   
+    22 O_DS         1   ANI    O1   22    -0.654000     15.99940 ; qtot -0.368  O   
+    23 O_DS         1   ANI    O1   23    -0.654000     15.99940 ; qtot -0.684  O   
+    24 O_DS         1   ANI    O1   24    -0.654000     15.99940 ; qtot -1.000  O   
 
 [ bonds ]
 ;   ai     aj funct   r             k
