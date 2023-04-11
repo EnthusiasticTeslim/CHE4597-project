@@ -13,10 +13,10 @@ The project will use molecular dynamics simulations to investigate the interfaci
 ## Project Structure
 The project will have the following structure:
 
-README.md: This file will provide an overview of the project and its structure.
-data/: This directory will contain the input files for the molecular dynamics simulations.
-references/: This directory will contain useful papers relating to the study.
-reports/: This directory will contain the results of the simulations, including plots and data files.
+1. README.md: This file will provide an overview of the project and its structure.\
+2. data: This directory will contain the input files for the molecular dynamics simulations.\
+3. references: This directory will contain useful papers relating to the study.\
+4. reports: This directory will contain the results of the simulations, including plots and data files.
 
 ## Conclusion
 This project will provide insight into the comparative effect of cationic and anionic surfactants of the same hydrophobic length on the interfacial properties of oil and water. The results of this project will contribute to a better understanding of the interfacial dynamics of surfactants, which has important implications for various industrial applications.
