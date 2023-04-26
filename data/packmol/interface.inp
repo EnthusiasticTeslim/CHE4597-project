@@ -1,0 +1,22 @@
+#
+# Interface between Oil and Water
+#
+
+tolerance 2.0 
+filetype pdb
+output interface.pdb
+
+structure ../water.pdb 
+  number 52
+  inside box 0. 0. 0. 10. 10. 10.
+end structure
+
+structure ../hexane.pdb
+  number 23
+  inside box 0. 0. 10. 10. 10. 40.
+end structure
+
+structure ../water.pdb
+  number 52
+  inside box 0. 0. 40. 10. 10. 50.
+end structure
