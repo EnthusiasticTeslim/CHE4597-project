@@ -1,0 +1,2195 @@
+                       :-) GROMACS - gmx mdrun, 2021 (-:
+
+                            GROMACS is written by:
+     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
+         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
+       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
+     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
+    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
+       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
+      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
+    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
+      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
+       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
+        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
+        Szilard Pall               Sander Pronk              Roland Schulz       
+       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
+       Peter Tieleman              Jon Vincent              Teemu Virolainen     
+     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2021
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /Users/admin/Documents/GitHub/CHE4597-project/data/interfaces/water
+Process ID:   43222
+Command line:
+  gmx mdrun -v -deffnm em
+
+GROMACS version:    2021
+Verified release checksum is 3e06a5865d6ff726fc417dea8d55afd37ac3cbb94c02c54c76d7a881c49c5dd8
+Precision:          mixed
+Memory model:       64 bit
+MPI library:        thread_mpi
+OpenMP support:     disabled
+GPU support:        disabled
+SIMD instructions:  AVX2_256
+FFT library:        fftw-3.3.8-sse2
+RDTSCP usage:       enabled
+TNG support:        enabled
+Hwloc support:      disabled
+Tracing support:    disabled
+C compiler:         /Library/Developer/CommandLineTools/usr/bin/cc AppleClang 12.0.5.12050022
+C compiler flags:   -mavx2 -mfma -Wno-unknown-pragmas -Wno-missing-field-initializers -fno-stack-check -fno-stack-check -O3 -DNDEBUG
+C++ compiler:       /Library/Developer/CommandLineTools/usr/bin/c++ AppleClang 12.0.5.12050022
+C++ compiler flags: -mavx2 -mfma -Wno-unknown-pragmas -Wno-missing-field-initializers -fno-stack-check -fno-stack-check -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-source-uses-openmp -Wno-c++17-extensions -Wno-documentation-unknown-command -Wno-covered-switch-default -Wno-switch-enum -Wno-extra-semi-stmt -Wno-disabled-macro-expansion -Wno-cast-align -Wno-reserved-id-macro -Wno-global-constructors -Wno-exit-time-destructors -Wno-unused-macros -Wno-weak-vtables -Wno-conditional-uninitialized -Wno-format-nonliteral -Wno-shadow -Wno-cast-qual -Wno-documentation -Wno-used-but-marked-unused -Wno-padded -Wno-float-equal -Wno-old-style-cast -Wno-conversion -Wno-double-promotion -O3 -DNDEBUG
+
+
+Running on 1 node with total 8 cores, 8 logical cores
+Hardware detected:
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Core(TM) i5-1030NG7 CPU @ 1.10GHz
+    Family: 6   Model: 126   Stepping: 5
+    Features: aes apic avx avx2 avx512f avx512cd avx512bw avx512vl clfsh cmov cx8 cx16 f16c fma htt intel lahf mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sha sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+    Number of AVX-512 FMA units: 1 (AVX2 is faster w/o 2 AVX-512 FMA units)
+  Hardware topology: Only logical processor count
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX 1 (2015) pp. 19-25
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale 8759 (2015) pp. 3-27
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, and E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics 29 (2013) pp. 845-54
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE CITE THE DOI FOR THIS VERSION OF GROMACS ++++
+https://doi.org/10.5281/zenodo.4457626
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator                     = steep
+   tinit                          = 0
+   dt                             = 0.001
+   nsteps                         = 50000
+   init-step                      = 0
+   simulation-part                = 1
+   mts                            = false
+   comm-mode                      = Linear
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = -624232533
+   emtol                          = 100
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 0
+   nstvout                        = 0
+   nstfout                        = 0
+   nstlog                         = 1000
+   nstcalcenergy                  = 100
+   nstenergy                      = 1000
+   nstxout-compressed             = 0
+   compressed-x-precision         = 1000
+   cutoff-scheme                  = Verlet
+   nstlist                        = 1
+   pbc                            = xyz
+   periodic-molecules             = false
+   verlet-buffer-tolerance        = 0.005
+   rlist                          = 1.2
+   coulombtype                    = PME
+   coulomb-modifier               = Potential-shift
+   rcoulomb-switch                = 0
+   rcoulomb                       = 1.2
+   epsilon-r                      = 1
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = Potential-shift
+   rvdw-switch                    = 0
+   rvdw                           = 1.2
+   DispCorr                       = No
+   table-extension                = 1
+   fourierspacing                 = 0.12
+   fourier-nx                     = 25
+   fourier-ny                     = 25
+   fourier-nz                     = 25
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 0
+   epsilon-surface                = 0
+   tcoupl                         = No
+   nsttcouple                     = -1
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = false
+   pcoupl                         = No
+   pcoupltype                     = Isotropic
+   nstpcouple                     = -1
+   tau-p                          = 1
+   compressibility (3x3):
+      compressibility[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   ref-p (3x3):
+      ref-p[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   refcoord-scaling               = No
+   posres-com (3):
+      posres-com[0]= 0.00000e+00
+      posres-com[1]= 0.00000e+00
+      posres-com[2]= 0.00000e+00
+   posres-comB (3):
+      posres-comB[0]= 0.00000e+00
+      posres-comB[1]= 0.00000e+00
+      posres-comB[2]= 0.00000e+00
+   QMMM                           = false
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = false
+   Shake-SOR                      = false
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = false
+   awh                            = false
+   rotation                       = false
+   interactiveMD                  = false
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = false
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = no
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = false
+   swapcoords                     = no
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+   applied-forces:
+     electric-field:
+       x:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       y:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       z:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+     density-guided-simulation:
+       active                     = false
+       group                      = protein
+       similarity-measure         = inner-product
+       atom-spreading-weight      = unity
+       force-constant             = 1e+09
+       gaussian-transform-spreading-width = 0.2
+       gaussian-transform-spreading-range-in-multiples-of-width = 4
+       reference-density-filename = reference.mrc
+       nst                        = 1
+       normalize-densities        = true
+       adaptive-force-scaling     = false
+       adaptive-force-scaling-time-constant = 4
+       shift-vector               = 
+       transformation-matrix      = 
+grpopts:
+   nrdf:        5397
+   ref-t:           0
+   tau-t:           0
+annealing:          No
+annealing-npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0
+
+
+Initializing Domain Decomposition on 8 ranks
+NOTE: disabling dynamic load balancing as it is only supported with dynamics, not with integrator 'steep'.
+Dynamic load balancing: off
+Using update groups, nr 900, average size 3.0 atoms, max. radius 0.084 nm
+Minimum cell size due to atom displacement: 0.000 nm
+Using 0 separate PME ranks, as there are too few total
+ ranks for efficient splitting
+Optimizing the DD grid for 8 cells with a minimum initial size of 0.000 nm
+Domain decomposition grid 4 x 2 x 1, separate PME ranks 0
+PME domain decomposition: 4 x 2 x 1
+Domain decomposition rank 0, coordinates 0 0 0
+
+The initial number of communication pulses is: X 2 Y 1
+The initial domain decomposition cell size is: X 0.75 nm Y 1.50 nm
+
+Using 8 MPI threads
+System total charge: 0.000
+Will do PME sum in reciprocal space for electrostatic interactions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee and L. G. Pedersen 
+A smooth particle mesh Ewald method
+J. Chem. Phys. 103 (1995) pp. 8577-8592
+-------- -------- --- Thank You --- -------- --------
+
+Using a Gaussian width (1/beta) of 0.384195 nm for Ewald
+Potential shift: LJ r^-12: -1.122e-01 r^-6: -3.349e-01, Ewald -8.333e-06
+Initialized non-bonded Ewald tables, spacing: 1.02e-03 size: 1176
+
+
+
+Using SIMD 4x8 nonbonded short-range kernels
+
+Using a 4x8 pair-list setup:
+  updated every 1 steps, buffer 0.000 nm, rlist 1.200 nm
+
+Using geometric Lennard-Jones combination rule
+Removing pbc first time
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Miyamoto and P. A. Kollman
+SETTLE: An Analytical Version of the SHAKE and RATTLE Algorithms for Rigid
+Water Models
+J. Comp. Chem. 13 (1992) pp. 952-962
+-------- -------- --- Thank You --- -------- --------
+
+
+Linking all bonded interactions to atoms
+
+
+Note that activating steepest-descent energy minimization via the integrator .mdp option and the command gmx mdrun may be available in a different form in a future version of GROMACS, e.g. gmx minimize and an .mdp option.
+Initiating Steepest Descents
+
+Atom distribution over 8 domains: av 337 stddev 30 min 300 max 363
+Started Steepest Descents on rank 0 Sun Apr 23 14:38:09 2023
+
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+02
+   Number of steps    =        50000
+           Step           Time
+              0        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    2.32431e+09   -4.19915e+03    2.06212e+03    2.32431e+09    5.71709e+09
+
+
+DD  step 0 load imb.: force 20.5%
+           Step           Time
+              1        1.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    1.47793e+08   -4.55161e+03    2.06218e+03    1.47791e+08    3.62665e+08
+
+           Step           Time
+              2        2.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    3.10675e+07   -4.83089e+03    2.06171e+03    3.10647e+07    7.55069e+07
+
+           Step           Time
+              3        3.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.98111e+06   -5.22444e+03    2.06131e+03    6.97795e+06    1.63617e+07
+
+           Step           Time
+              4        4.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    1.55172e+06   -5.05574e+03    2.05988e+03    1.54872e+06    3.58120e+06
+
+           Step           Time
+              5        5.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    4.77659e+05   -4.07443e+03    2.06066e+03    4.75645e+05    1.17486e+06
+
+           Step           Time
+              6        6.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    1.57141e+05   -3.50088e+03    2.06621e+03    1.55706e+05    4.04912e+05
+
+           Step           Time
+              7        7.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.44850e+04   -3.44473e+03    2.06079e+03    9.31011e+04    2.56208e+05
+
+           Step           Time
+              8        8.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.63492e+04   -3.47907e+03    2.04794e+03    7.49181e+04    2.11946e+05
+
+           Step           Time
+              9        9.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.75210e+04   -4.02379e+03    2.03856e+03    5.55358e+04    1.65075e+05
+
+           Step           Time
+             10       10.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    4.13863e+04   -4.96947e+03    1.99657e+03    3.84134e+04    1.23990e+05
+
+           Step           Time
+             11       11.00000
+
+           Step           Time
+             12       12.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    3.20703e+04   -6.28241e+03    1.94615e+03    2.77340e+04    9.96436e+04
+
+           Step           Time
+             13       13.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    2.64695e+04   -7.68977e+03    1.87690e+03    2.06566e+04    8.47221e+04
+
+           Step           Time
+             14       14.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    2.13038e+04   -9.48767e+03    1.77244e+03    1.35886e+04    7.07184e+04
+
+           Step           Time
+             15       15.00000
+
+           Step           Time
+             16       16.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    1.78767e+04   -1.13643e+04    1.64141e+03    8.15385e+03    6.11094e+04
+
+           Step           Time
+             17       17.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    1.21570e+04   -1.68850e+04    1.22993e+03   -3.49803e+03    4.43288e+04
+
+           Step           Time
+             18       18.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    1.08574e+04   -1.89366e+04    1.06743e+03   -7.01173e+03    4.01823e+04
+
+           Step           Time
+             19       19.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.93686e+03   -2.07768e+04    9.34723e+02   -9.90518e+03    3.72277e+04
+
+           Step           Time
+             20       20.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.30243e+03   -2.21258e+04    8.40756e+02   -1.19826e+04    3.50895e+04
+
+           Step           Time
+             21       21.00000
+
+           Step           Time
+             22       22.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.42398e+03   -2.40731e+04    7.05972e+02   -1.49432e+04    3.22031e+04
+
+           Step           Time
+             23       23.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.12327e+03   -2.95085e+04    3.86943e+02   -2.19983e+04    2.70217e+04
+
+           Step           Time
+             24       24.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.57186e+03   -3.04370e+04    3.51003e+02   -2.35142e+04    2.52595e+04
+
+           Step           Time
+             25       25.00000
+
+           Step           Time
+             26       26.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.31128e+03   -3.07847e+04    3.40337e+02   -2.41330e+04    2.44934e+04
+
+           Step           Time
+             27       27.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.96537e+03   -3.26174e+04    2.86586e+02   -2.63655e+04    2.29964e+04
+
+           Step           Time
+             28       28.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.78996e+03   -3.37575e+04    2.57638e+02   -2.77099e+04    2.22022e+04
+
+           Step           Time
+             29       29.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.87259e+03   -3.51628e+04    2.35246e+02   -2.90549e+04    2.19601e+04
+
+           Step           Time
+             30       30.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.58996e+03   -3.55925e+04    2.25641e+02   -2.97769e+04    2.10961e+04
+
+           Step           Time
+             31       31.00000
+
+           Step           Time
+             32       32.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.49330e+03   -3.64054e+04    2.06991e+02   -3.07051e+04    2.06178e+04
+
+           Step           Time
+             33       33.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.60160e+03   -3.88500e+04    1.83773e+02   -3.30646e+04    2.01283e+04
+
+           Step           Time
+             34       34.00000
+
+           Step           Time
+             35       35.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.44594e+03   -3.92872e+04    1.63535e+02   -3.36777e+04    1.96305e+04
+
+           Step           Time
+             36       36.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.41995e+03   -4.01234e+04    1.60850e+02   -3.45426e+04    1.93258e+04
+
+           Step           Time
+             37       37.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.51220e+03   -4.09232e+04    1.52936e+02   -3.52580e+04    1.92812e+04
+
+           Step           Time
+             38       38.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.47736e+03   -4.12876e+04    1.51428e+02   -3.56588e+04    1.91437e+04
+
+           Step           Time
+             39       39.00000
+
+           Step           Time
+             40       40.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.47640e+03   -4.16190e+04    1.47507e+02   -3.59951e+04    1.90341e+04
+
+           Step           Time
+             41       41.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.75673e+03   -4.33201e+04    1.51950e+02   -3.74114e+04    1.93388e+04
+
+           Step           Time
+             42       42.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.71304e+03   -4.35607e+04    1.40249e+02   -3.77074e+04    1.91281e+04
+
+           Step           Time
+             43       43.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.79945e+03   -4.39483e+04    1.40588e+02   -3.80083e+04    1.92782e+04
+
+           Step           Time
+             44       44.00000
+
+           Step           Time
+             45       45.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.73852e+03   -4.41173e+04    1.34381e+02   -3.82444e+04    1.90607e+04
+
+           Step           Time
+             46       46.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.02454e+03   -4.50447e+04    1.37317e+02   -3.88828e+04    1.95567e+04
+
+           Step           Time
+             47       47.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.91166e+03   -4.51548e+04    1.27714e+02   -3.91154e+04    1.92353e+04
+
+           Step           Time
+             48       48.00000
+
+           Step           Time
+             49       49.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    5.95086e+03   -4.53842e+04    1.28047e+02   -3.93053e+04    1.92788e+04
+
+           Step           Time
+             50       50.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.07160e+03   -4.58780e+04    1.23378e+02   -3.96831e+04    1.94879e+04
+
+           Step           Time
+             51       51.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.09592e+03   -4.60901e+04    1.24111e+02   -3.98700e+04    1.94990e+04
+
+           Step           Time
+             52       52.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.21576e+03   -4.64229e+04    1.21250e+02   -4.00858e+04    1.97258e+04
+
+           Step           Time
+             53       53.00000
+
+           Step           Time
+             54       54.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.18816e+03   -4.65594e+04    1.19250e+02   -4.02520e+04    1.96203e+04
+
+           Step           Time
+             55       55.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.27105e+03   -4.68353e+04    1.23095e+02   -4.04412e+04    1.98051e+04
+
+           Step           Time
+             56       56.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.28643e+03   -4.69735e+04    1.17632e+02   -4.05695e+04    1.98083e+04
+
+           Step           Time
+             57       57.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.41982e+03   -4.72092e+04    1.28271e+02   -4.06611e+04    2.01017e+04
+
+           Step           Time
+             58       58.00000
+
+           Step           Time
+             59       59.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.35729e+03   -4.73155e+04    1.19722e+02   -4.08385e+04    1.99111e+04
+
+           Step           Time
+             60       60.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.46418e+03   -4.76062e+04    1.16061e+02   -4.10260e+04    2.01179e+04
+
+           Step           Time
+             61       61.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.49418e+03   -4.77947e+04    1.21812e+02   -4.11787e+04    2.01528e+04
+
+           Step           Time
+             62       62.00000
+
+           Step           Time
+             63       63.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.49960e+03   -4.79148e+04    1.14324e+02   -4.13009e+04    2.01351e+04
+
+           Step           Time
+             64       64.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.63619e+03   -4.82277e+04    1.21980e+02   -4.14696e+04    2.03984e+04
+
+           Step           Time
+             65       65.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.61223e+03   -4.83386e+04    1.13003e+02   -4.16133e+04    2.03048e+04
+
+           Step           Time
+             66       66.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.76299e+03   -4.86046e+04    1.21428e+02   -4.17202e+04    2.06373e+04
+
+           Step           Time
+             67       67.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.72321e+03   -4.87007e+04    1.11706e+02   -4.18657e+04    2.05060e+04
+
+           Step           Time
+             68       68.00000
+
+           Step           Time
+             69       69.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.75173e+03   -4.88460e+04    1.14234e+02   -4.19801e+04    2.05471e+04
+
+           Step           Time
+             70       70.00000
+
+           Step           Time
+             71       71.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.83865e+03   -4.90475e+04    1.09676e+02   -4.20992e+04    2.07222e+04
+
+           Step           Time
+             72       72.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.85067e+03   -4.91732e+04    1.14014e+02   -4.22086e+04    2.07258e+04
+
+           Step           Time
+             73       73.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.94791e+03   -4.92930e+04    1.08943e+02   -4.22361e+04    2.09450e+04
+
+           Step           Time
+             74       74.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.92098e+03   -4.94383e+04    1.11685e+02   -4.24057e+04    2.08434e+04
+
+           Step           Time
+             75       75.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.07881e+03   -4.95994e+04    1.05894e+02   -4.24147e+04    2.12299e+04
+
+           Step           Time
+             76       76.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    6.99872e+03   -4.97094e+04    1.08833e+02   -4.26019e+04    2.09993e+04
+
+           Step           Time
+             77       77.00000
+
+           Step           Time
+             78       78.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.05199e+03   -4.98735e+04    1.04471e+02   -4.27171e+04    2.10979e+04
+
+           Step           Time
+             79       79.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.10148e+03   -4.99977e+04    1.10659e+02   -4.27856e+04    2.12014e+04
+
+           Step           Time
+             80       80.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.14982e+03   -5.01177e+04    1.05003e+02   -4.28629e+04    2.12933e+04
+
+           Step           Time
+             81       81.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.17896e+03   -5.01999e+04    1.14023e+02   -4.29069e+04    2.13571e+04
+
+           Step           Time
+             82       82.00000
+
+           Step           Time
+             83       83.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.17788e+03   -5.03336e+04    1.05119e+02   -4.30506e+04    2.13153e+04
+
+           Step           Time
+             84       84.00000
+
+           Step           Time
+             85       85.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.22344e+03   -5.04660e+04    1.03506e+02   -4.31391e+04    2.14070e+04
+
+           Step           Time
+             86       86.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.27030e+03   -5.05761e+04    1.04610e+02   -4.32012e+04    2.15354e+04
+
+           Step           Time
+             87       87.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.32428e+03   -5.06776e+04    1.08914e+02   -4.32444e+04    2.16577e+04
+
+           Step           Time
+             88       88.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.34437e+03   -5.07504e+04    1.05845e+02   -4.33002e+04    2.16440e+04
+
+           Step           Time
+             89       89.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.38658e+03   -5.08530e+04    1.10537e+02   -4.33559e+04    2.17352e+04
+
+           Step           Time
+             90       90.00000
+
+           Step           Time
+             91       91.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.36722e+03   -5.09688e+04    9.98150e+01   -4.35017e+04    2.16520e+04
+
+           Step           Time
+             92       92.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.51455e+03   -5.11497e+04    1.09806e+02   -4.35254e+04    2.19857e+04
+
+           Step           Time
+             93       93.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.48183e+03   -5.12109e+04    1.01695e+02   -4.36274e+04    2.18773e+04
+
+           Step           Time
+             94       94.00000
+
+           Step           Time
+             95       95.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.49550e+03   -5.13365e+04    9.93599e+01   -4.37416e+04    2.18855e+04
+
+           Step           Time
+             96       96.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.57967e+03   -5.14423e+04    1.00641e+02   -4.37620e+04    2.20797e+04
+
+           Step           Time
+             97       97.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.57578e+03   -5.15568e+04    9.79880e+01   -4.38830e+04    2.20424e+04
+
+           Step           Time
+             98       98.00000
+
+           Step           Time
+             99       99.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.60014e+03   -5.16322e+04    9.63185e+01   -4.39357e+04    2.20879e+04
+
+           Step           Time
+            100      100.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.64406e+03   -5.17271e+04    9.77132e+01   -4.39853e+04    2.21803e+04
+
+           Step           Time
+            101      101.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.66691e+03   -5.17970e+04    9.62037e+01   -4.40339e+04    2.22228e+04
+
+           Step           Time
+            102      102.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.70502e+03   -5.18782e+04    9.72060e+01   -4.40760e+04    2.23031e+04
+
+           Step           Time
+            103      103.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.73674e+03   -5.19387e+04    9.72593e+01   -4.41047e+04    2.23715e+04
+
+           Step           Time
+            104      104.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.76247e+03   -5.20161e+04    9.66431e+01   -4.41570e+04    2.24195e+04
+
+           Step           Time
+            105      105.00000
+
+           Step           Time
+            106      106.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.76115e+03   -5.20924e+04    9.41795e+01   -4.42371e+04    2.23974e+04
+
+           Step           Time
+            107      107.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.92221e+03   -5.22833e+04    9.99875e+01   -4.42611e+04    2.27766e+04
+
+           Step           Time
+            108      108.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.88301e+03   -5.23917e+04    9.31642e+01   -4.44155e+04    2.26454e+04
+
+           Step           Time
+            109      109.00000
+
+           Step           Time
+            110      110.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.90248e+03   -5.24554e+04    9.20095e+01   -4.44609e+04    2.26815e+04
+
+           Step           Time
+            111      111.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.95941e+03   -5.25459e+04    9.43147e+01   -4.44922e+04    2.28102e+04
+
+           Step           Time
+            112      112.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.96617e+03   -5.26146e+04    9.10946e+01   -4.45573e+04    2.28108e+04
+
+           Step           Time
+            113      113.00000
+
+           Step           Time
+            114      114.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    7.98468e+03   -5.26756e+04    9.14421e+01   -4.45995e+04    2.28453e+04
+
+           Step           Time
+            115      115.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.02930e+03   -5.27592e+04    9.07359e+01   -4.46391e+04    2.29430e+04
+
+           Step           Time
+            116      116.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.04666e+03   -5.28193e+04    9.15238e+01   -4.46811e+04    2.29745e+04
+
+           Step           Time
+            117      117.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.08396e+03   -5.28792e+04    9.06733e+01   -4.47046e+04    2.30586e+04
+
+           Step           Time
+            118      118.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.11041e+03   -5.29312e+04    9.30293e+01   -4.47278e+04    2.31418e+04
+
+           Step           Time
+            119      119.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.13471e+03   -5.29779e+04    9.12959e+01   -4.47519e+04    2.31946e+04
+
+           Step           Time
+            120      120.00000
+
+           Step           Time
+            121      121.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.12788e+03   -5.30597e+04    8.93186e+01   -4.48425e+04    2.31566e+04
+
+           Step           Time
+            122      122.00000
+
+           Step           Time
+            123      123.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.24069e+03   -5.32247e+04    9.01071e+01   -4.48939e+04    2.33816e+04
+
+           Step           Time
+            124      124.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.23045e+03   -5.33016e+04    8.90755e+01   -4.49821e+04    2.33335e+04
+
+           Step           Time
+            125      125.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.26152e+03   -5.33550e+04    8.78802e+01   -4.50056e+04    2.33663e+04
+
+           Step           Time
+            126      126.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.27687e+03   -5.34044e+04    8.95587e+01   -4.50380e+04    2.33648e+04
+
+           Step           Time
+            127      127.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.30934e+03   -5.34484e+04    8.86213e+01   -4.50504e+04    2.34427e+04
+
+           Step           Time
+            128      128.00000
+
+           Step           Time
+            129      129.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.29924e+03   -5.35136e+04    8.65542e+01   -4.51278e+04    2.33976e+04
+
+           Step           Time
+            130      130.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.50114e+03   -5.38562e+04    8.87255e+01   -4.52663e+04    2.38297e+04
+
+           Step           Time
+            131      131.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.47926e+03   -5.38968e+04    8.77785e+01   -4.53298e+04    2.37535e+04
+
+           Step           Time
+            132      132.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.49664e+03   -5.39375e+04    8.63545e+01   -4.53545e+04    2.37942e+04
+
+           Step           Time
+            133      133.00000
+
+           Step           Time
+            134      134.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.48182e+03   -5.39972e+04    8.36058e+01   -4.54318e+04    2.37355e+04
+
+           Step           Time
+            135      135.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.60764e+03   -5.41609e+04    8.79797e+01   -4.54653e+04    2.40381e+04
+
+           Step           Time
+            136      136.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.56870e+03   -5.42366e+04    8.22709e+01   -4.55856e+04    2.39072e+04
+
+           Step           Time
+            137      137.00000
+
+           Step           Time
+            138      138.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.58513e+03   -5.42796e+04    8.24983e+01   -4.56119e+04    2.39421e+04
+
+           Step           Time
+            139      139.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.59895e+03   -5.43165e+04    8.20795e+01   -4.56355e+04    2.39675e+04
+
+           Step           Time
+            140      140.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.61817e+03   -5.43566e+04    8.27866e+01   -4.56557e+04    2.40112e+04
+
+           Step           Time
+            141      141.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.63264e+03   -5.43830e+04    8.25167e+01   -4.56678e+04    2.40399e+04
+
+           Step           Time
+            142      142.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.65006e+03   -5.44238e+04    8.35527e+01   -4.56902e+04    2.40795e+04
+
+           Step           Time
+            143      143.00000
+
+           Step           Time
+            144      144.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.63957e+03   -5.44671e+04    8.07116e+01   -4.57468e+04    2.40385e+04
+
+           Step           Time
+            145      145.00000
+
+           Step           Time
+            146      146.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.68109e+03   -5.45475e+04    8.16280e+01   -4.57848e+04    2.41318e+04
+
+           Step           Time
+            147      147.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.67973e+03   -5.45800e+04    8.03072e+01   -4.58200e+04    2.41175e+04
+
+           Step           Time
+            148      148.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.71340e+03   -5.46360e+04    8.13384e+01   -4.58413e+04    2.41717e+04
+
+           Step           Time
+            149      149.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.71246e+03   -5.46694e+04    8.00485e+01   -4.58769e+04    2.41585e+04
+
+           Step           Time
+            150      150.00000
+
+           Step           Time
+            151      151.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.72192e+03   -5.47048e+04    7.97156e+01   -4.59032e+04    2.41759e+04
+
+           Step           Time
+            152      152.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.74721e+03   -5.47552e+04    8.00345e+01   -4.59280e+04    2.42294e+04
+
+           Step           Time
+            153      153.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.75559e+03   -5.47944e+04    7.96485e+01   -4.59592e+04    2.42432e+04
+
+           Step           Time
+            154      154.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.77761e+03   -5.48249e+04    7.99830e+01   -4.59673e+04    2.42923e+04
+
+           Step           Time
+            155      155.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.78634e+03   -5.48693e+04    7.99711e+01   -4.60029e+04    2.43063e+04
+
+           Step           Time
+            156      156.00000
+
+           Step           Time
+            157      157.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.78571e+03   -5.48972e+04    7.84575e+01   -4.60330e+04    2.42965e+04
+
+           Step           Time
+            158      158.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.82553e+03   -5.49554e+04    8.06576e+01   -4.60492e+04    2.43896e+04
+
+           Step           Time
+            159      159.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.81971e+03   -5.49861e+04    7.82517e+01   -4.60881e+04    2.43644e+04
+
+           Step           Time
+            160      160.00000
+
+           Step           Time
+            161      161.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.82956e+03   -5.50197e+04    7.84061e+01   -4.61117e+04    2.43832e+04
+
+           Step           Time
+            162      162.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.85114e+03   -5.50600e+04    7.83230e+01   -4.61305e+04    2.44293e+04
+
+           Step           Time
+            163      163.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.86014e+03   -5.50970e+04    7.84922e+01   -4.61584e+04    2.44452e+04
+
+           Step           Time
+            164      164.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.88049e+03   -5.51203e+04    7.84720e+01   -4.61613e+04    2.44918e+04
+
+           Step           Time
+            165      165.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.88913e+03   -5.51629e+04    7.89771e+01   -4.61948e+04    2.45055e+04
+
+           Step           Time
+            166      166.00000
+
+           Step           Time
+            167      167.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.88679e+03   -5.51891e+04    7.71360e+01   -4.62251e+04    2.44920e+04
+
+           Step           Time
+            168      168.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.92845e+03   -5.52420e+04    7.99782e+01   -4.62336e+04    2.45905e+04
+
+           Step           Time
+            169      169.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.92021e+03   -5.52718e+04    7.69996e+01   -4.62745e+04    2.45599e+04
+
+           Step           Time
+            170      170.00000
+
+           Step           Time
+            171      171.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.92944e+03   -5.53037e+04    7.73564e+01   -4.62969e+04    2.45770e+04
+
+           Step           Time
+            172      172.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.95097e+03   -5.53374e+04    7.72222e+01   -4.63092e+04    2.46249e+04
+
+           Step           Time
+            173      173.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.95862e+03   -5.53736e+04    7.75321e+01   -4.63374e+04    2.46369e+04
+
+           Step           Time
+            174      174.00000
+
+           Step           Time
+            175      175.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.96067e+03   -5.53956e+04    7.63563e+01   -4.63586e+04    2.46364e+04
+
+           Step           Time
+            176      176.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.98981e+03   -5.54438e+04    7.79607e+01   -4.63760e+04    2.47020e+04
+
+           Step           Time
+            177      177.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    8.98859e+03   -5.54661e+04    7.61397e+01   -4.64014e+04    2.46926e+04
+
+           Step           Time
+            178      178.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.01765e+03   -5.55002e+04    7.85431e+01   -4.64040e+04    2.47612e+04
+
+           Step           Time
+            179      179.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.01549e+03   -5.55212e+04    7.62201e+01   -4.64295e+04    2.47495e+04
+
+           Step           Time
+            180      180.00000
+
+           Step           Time
+            181      181.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.01842e+03   -5.55537e+04    7.61473e+01   -4.64592e+04    2.47494e+04
+
+           Step           Time
+            182      182.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.06412e+03   -5.56101e+04    7.69458e+01   -4.64690e+04    2.49032e+04
+
+           Step           Time
+            183      183.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.05762e+03   -5.56546e+04    7.59371e+01   -4.65211e+04    2.48751e+04
+
+           Step           Time
+            184      184.00000
+
+           Step           Time
+            185      185.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.06639e+03   -5.56791e+04    7.51141e+01   -4.65376e+04    2.48915e+04
+
+           Step           Time
+            186      186.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.08160e+03   -5.57099e+04    7.63857e+01   -4.65519e+04    2.49237e+04
+
+           Step           Time
+            187      187.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.08830e+03   -5.57270e+04    7.50180e+01   -4.65637e+04    2.49362e+04
+
+           Step           Time
+            188      188.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.10457e+03   -5.57569e+04    7.69729e+01   -4.65754e+04    2.49714e+04
+
+           Step           Time
+            189      189.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.11318e+03   -5.57641e+04    7.54074e+01   -4.65755e+04    2.49911e+04
+
+           Step           Time
+            190      190.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.12790e+03   -5.57960e+04    7.79470e+01   -4.65902e+04    2.50216e+04
+
+           Step           Time
+            191      191.00000
+
+           Step           Time
+            192      192.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.11549e+03   -5.58238e+04    7.45106e+01   -4.66338e+04    2.49817e+04
+
+           Step           Time
+            193      193.00000
+
+           Step           Time
+            194      194.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.14288e+03   -5.58695e+04    7.62845e+01   -4.66504e+04    2.50415e+04
+
+           Step           Time
+            195      195.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.13995e+03   -5.58875e+04    7.43247e+01   -4.66732e+04    2.50289e+04
+
+           Step           Time
+            196      196.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.16399e+03   -5.59190e+04    7.63118e+01   -4.66787e+04    2.50831e+04
+
+           Step           Time
+            197      197.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.16071e+03   -5.59358e+04    7.41662e+01   -4.67009e+04    2.50701e+04
+
+           Step           Time
+            198      198.00000
+
+           Step           Time
+            199      199.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.16609e+03   -5.59613e+04    7.44727e+01   -4.67207e+04    2.50774e+04
+
+           Step           Time
+            200      200.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.18785e+03   -5.59921e+04    7.43038e+01   -4.67299e+04    2.51577e+04
+
+           Step           Time
+            201      201.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.19114e+03   -5.60240e+04    7.45042e+01   -4.67584e+04    2.51577e+04
+
+           Step           Time
+            202      202.00000
+
+           Step           Time
+            203      203.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.19374e+03   -5.60390e+04    7.35429e+01   -4.67718e+04    2.51607e+04
+
+           Step           Time
+            204      204.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.21038e+03   -5.60675e+04    7.48264e+01   -4.67823e+04    2.51969e+04
+
+           Step           Time
+            205      205.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.21042e+03   -5.60795e+04    7.33590e+01   -4.67957e+04    2.51939e+04
+
+           Step           Time
+            206      206.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.22930e+03   -5.61056e+04    7.53273e+01   -4.68010e+04    2.52365e+04
+
+           Step           Time
+            207      207.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.22797e+03   -5.61118e+04    7.34248e+01   -4.68104e+04    2.52313e+04
+
+           Step           Time
+            208      208.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.24923e+03   -5.61373e+04    7.62417e+01   -4.68118e+04    2.52802e+04
+
+           Step           Time
+            209      209.00000
+
+           Step           Time
+            210      210.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.23431e+03   -5.61586e+04    7.30659e+01   -4.68512e+04    2.52358e+04
+
+           Step           Time
+            211      211.00000
+
+           Step           Time
+            212      212.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.28082e+03   -5.62334e+04    7.52416e+01   -4.68773e+04    2.53388e+04
+
+           Step           Time
+            213      213.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.26703e+03   -5.62465e+04    7.28077e+01   -4.69066e+04    2.52991e+04
+
+           Step           Time
+            214      214.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.29357e+03   -5.62860e+04    7.40994e+01   -4.69183e+04    2.53584e+04
+
+           Step           Time
+            215      215.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.28396e+03   -5.62942e+04    7.23436e+01   -4.69378e+04    2.53309e+04
+
+           Step           Time
+            216      216.00000
+
+           Step           Time
+            217      217.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.29455e+03   -5.63186e+04    7.30284e+01   -4.69510e+04    2.53528e+04
+
+           Step           Time
+            218      218.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.29937e+03   -5.63295e+04    7.23128e+01   -4.69578e+04    2.53624e+04
+
+           Step           Time
+            219      219.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.31125e+03   -5.63582e+04    7.32450e+01   -4.69737e+04    2.53865e+04
+
+           Step           Time
+            220      220.00000
+
+           Step           Time
+            221      221.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.30691e+03   -5.63661e+04    7.21403e+01   -4.69871e+04    2.53730e+04
+
+           Step           Time
+            222      222.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.33083e+03   -5.64018e+04    7.35660e+01   -4.69974e+04    2.54271e+04
+
+           Step           Time
+            223      223.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.32144e+03   -5.64070e+04    7.18886e+01   -4.70137e+04    2.54006e+04
+
+           Step           Time
+            224      224.00000
+
+           Step           Time
+            225      225.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.33061e+03   -5.64282e+04    7.24350e+01   -4.70252e+04    2.54196e+04
+
+           Step           Time
+            226      226.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.33559e+03   -5.64435e+04    7.17689e+01   -4.70361e+04    2.54285e+04
+
+           Step           Time
+            227      227.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.34643e+03   -5.64684e+04    7.25412e+01   -4.70494e+04    2.54509e+04
+
+           Step           Time
+            228      228.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.34853e+03   -5.64736e+04    7.16864e+01   -4.70534e+04    2.54545e+04
+
+           Step           Time
+            229      229.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.36206e+03   -5.65038e+04    7.28355e+01   -4.70689e+04    2.54828e+04
+
+           Step           Time
+            230      230.00000
+
+           Step           Time
+            231      231.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.35552e+03   -5.65107e+04    7.15097e+01   -4.70836e+04    2.54635e+04
+
+           Step           Time
+            232      232.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.38325e+03   -5.65476e+04    7.32840e+01   -4.70911e+04    2.55274e+04
+
+           Step           Time
+            233      233.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.37026e+03   -5.65513e+04    7.12429e+01   -4.71098e+04    2.54914e+04
+
+           Step           Time
+            234      234.00000
+
+           Step           Time
+            235      235.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.38039e+03   -5.65737e+04    7.19032e+01   -4.71214e+04    2.55128e+04
+
+           Step           Time
+            236      236.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.38404e+03   -5.65847e+04    7.11429e+01   -4.71295e+04    2.55188e+04
+
+           Step           Time
+            237      237.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.39567e+03   -5.66108e+04    7.20458e+01   -4.71431e+04    2.55431e+04
+
+           Step           Time
+            238      238.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.39692e+03   -5.66118e+04    7.11022e+01   -4.71438e+04    2.55452e+04
+
+           Step           Time
+            239      239.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.41101e+03   -5.66436e+04    7.23995e+01   -4.71602e+04    2.55746e+04
+
+           Step           Time
+            240      240.00000
+
+           Step           Time
+            241      241.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.40285e+03   -5.66500e+04    7.08600e+01   -4.71763e+04    2.55509e+04
+
+           Step           Time
+            242      242.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.43249e+03   -5.66847e+04    7.29787e+01   -4.71792e+04    2.55916e+04
+
+           Step           Time
+            243      243.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.41682e+03   -5.66872e+04    7.05949e+01   -4.71997e+04    2.55484e+04
+
+           Step           Time
+            244      244.00000
+
+           Step           Time
+            245      245.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.42684e+03   -5.67102e+04    7.13296e+01   -4.72121e+04    2.55692e+04
+
+           Step           Time
+            246      246.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.43072e+03   -5.67188e+04    7.05394e+01   -4.72176e+04    2.55761e+04
+
+           Step           Time
+            247      247.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.44152e+03   -5.67459e+04    7.15030e+01   -4.72329e+04    2.55979e+04
+
+           Step           Time
+            248      248.00000
+
+           Step           Time
+            249      249.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.43748e+03   -5.67522e+04    7.04227e+01   -4.72442e+04    2.55851e+04
+
+           Step           Time
+            250      250.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.45711e+03   -5.67815e+04    7.17733e+01   -4.72526e+04    2.56293e+04
+
+           Step           Time
+            251      251.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.44900e+03   -5.67848e+04    7.01711e+01   -4.72656e+04    2.56061e+04
+
+           Step           Time
+            252      252.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.47136e+03   -5.68105e+04    7.21846e+01   -4.72669e+04    2.56587e+04
+
+           Step           Time
+            253      253.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.45954e+03   -5.68085e+04    7.00383e+01   -4.72789e+04    2.56266e+04
+
+           Step           Time
+            254      254.00000
+
+           Step           Time
+            255      255.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.46516e+03   -5.68333e+04    7.05303e+01   -4.72976e+04    2.56356e+04
+
+           Step           Time
+            256      256.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.48229e+03   -5.68587e+04    7.01647e+01   -4.73062e+04    2.56730e+04
+
+           Step           Time
+            257      257.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.48485e+03   -5.68880e+04    7.05907e+01   -4.73326e+04    2.56726e+04
+
+           Step           Time
+            258      258.00000
+
+           Step           Time
+            259      259.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.48485e+03   -5.68958e+04    6.96866e+01   -4.73412e+04    2.56699e+04
+
+           Step           Time
+            260      260.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.49577e+03   -5.69164e+04    7.08590e+01   -4.73497e+04    2.56935e+04
+
+           Step           Time
+            261      261.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.49395e+03   -5.69194e+04    6.95288e+01   -4.73560e+04    2.56869e+04
+
+           Step           Time
+            262      262.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.50672e+03   -5.69422e+04    7.12962e+01   -4.73641e+04    2.57152e+04
+
+           Step           Time
+            263      263.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.50420e+03   -5.69380e+04    6.95570e+01   -4.73643e+04    2.57082e+04
+
+           Step           Time
+            264      264.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.51840e+03   -5.69645e+04    7.20668e+01   -4.73741e+04    2.57396e+04
+
+           Step           Time
+            265      265.00000
+
+           Step           Time
+            266      266.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.50686e+03   -5.69741e+04    6.94085e+01   -4.73978e+04    2.57061e+04
+
+           Step           Time
+            267      267.00000
+
+           Step           Time
+            268      268.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.52019e+03   -5.69980e+04    7.07922e+01   -4.74070e+04    2.57355e+04
+
+           Step           Time
+            269      269.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.51660e+03   -5.70029e+04    6.92499e+01   -4.74170e+04    2.57239e+04
+
+           Step           Time
+            270      270.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.52947e+03   -5.70226e+04    7.11224e+01   -4.74220e+04    2.57531e+04
+
+           Step           Time
+            271      271.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.52522e+03   -5.70252e+04    6.91073e+01   -4.74309e+04    2.57402e+04
+
+           Step           Time
+            272      272.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.53986e+03   -5.70441e+04    7.18662e+01   -4.74324e+04    2.57745e+04
+
+           Step           Time
+            273      273.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.53538e+03   -5.70399e+04    6.92383e+01   -4.74353e+04    2.57624e+04
+
+           Step           Time
+            274      274.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.55126e+03   -5.70599e+04    7.32002e+01   -4.74354e+04    2.58000e+04
+
+           Step           Time
+            275      275.00000
+
+           Step           Time
+            276      276.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.53589e+03   -5.70775e+04    6.91097e+01   -4.74724e+04    2.57543e+04
+
+           Step           Time
+            277      277.00000
+
+           Step           Time
+            278      278.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.55611e+03   -5.71070e+04    7.16579e+01   -4.74793e+04    2.58422e+04
+
+           Step           Time
+            279      279.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.54819e+03   -5.71140e+04    6.89585e+01   -4.74968e+04    2.58184e+04
+
+           Step           Time
+            280      280.00000
+
+           Step           Time
+            281      281.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.55240e+03   -5.71278e+04    6.98787e+01   -4.75055e+04    2.58263e+04
+
+           Step           Time
+            282      282.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.55701e+03   -5.71375e+04    6.88568e+01   -4.75116e+04    2.58353e+04
+
+           Step           Time
+            283      283.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.56038e+03   -5.71526e+04    7.02575e+01   -4.75219e+04    2.58409e+04
+
+           Step           Time
+            284      284.00000
+
+           Step           Time
+            285      285.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.56061e+03   -5.71604e+04    6.89849e+01   -4.75308e+04    2.58391e+04
+
+           Step           Time
+            286      286.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.56855e+03   -5.71781e+04    7.05981e+01   -4.75389e+04    2.58557e+04
+
+           Step           Time
+            287      287.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.56912e+03   -5.71862e+04    6.87869e+01   -4.75483e+04    2.58544e+04
+
+           Step           Time
+            288      288.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.57452e+03   -5.71979e+04    7.09456e+01   -4.75524e+04    2.58662e+04
+
+           Step           Time
+            289      289.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.57689e+03   -5.72055e+04    6.87211e+01   -4.75599e+04    2.58695e+04
+
+           Step           Time
+            290      290.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.58046e+03   -5.72147e+04    7.16296e+01   -4.75626e+04    2.58774e+04
+
+           Step           Time
+            291      291.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.58546e+03   -5.72203e+04    6.89003e+01   -4.75659e+04    2.58878e+04
+
+           Step           Time
+            292      292.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.58673e+03   -5.72272e+04    7.28775e+01   -4.75675e+04    2.58905e+04
+
+           Step           Time
+            293      293.00000
+
+           Step           Time
+            294      294.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+    9.58339e+03   -5.72479e+04    6.90179e+01   -4.75955e+04    2.58757e+04
+
+
+Steepest Descents converged to Fmax < 100 in 295 steps
+Potential Energy  = -4.7595523e+04
+Maximum force     =  9.8999184e+01 on atom 742
+Norm of force     =  1.2070027e+01
+
+    D O M A I N   D E C O M P O S I T I O N   S T A T I S T I C S
+
+ av. #atoms communicated per step for force:  2 x 10137.0
+
+Finished mdrun on rank 0 Sun Apr 23 14:38:12 2023
+

@@ -1,0 +1,13 @@
+#include "/usr/local/gromacs/share/gromacs/top/oplsaa.ff/forcefield.itp"
+#include "/usr/local/gromacs/share/gromacs/top/oplsaa.ff/spce.itp"
+#include "/usr/local/gromacs/share/gromacs/top/oplsaa.ff/ions.itp"
+[ system ]
+; Name
+Ions water
+
+[ molecules ]
+; Compound        #mols
+
+SOL         6
+NA               2
+CL               2

@@ -1,0 +1,1 @@
+gmx density -f md.trr -s em.tpr -d Z -ng 2 -b 0 -n density.ndx -dens number -o density_number_Z.xvg

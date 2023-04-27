@@ -1,0 +1,60 @@
+#Remarks LigParGen generated for Q (by Leela Dodda and Israel Cabeza de Vaca)
+
+{HEX}
+[atoms]
+       1    C00   C800  -0.2418 
+       2    C01   C801  -0.1835 
+       3    H02   H802    0.082 
+       4    H03   H803    0.082 
+       5    H04   H804    0.082 
+       6    C05   C805  -0.1813 
+       7    H06   H806   0.0895 
+       8    H07   H807   0.0895 
+       9    C08   C808  -0.1811 
+      10    H09   H809   0.0907 
+      11    H0A   H810   0.0907 
+      12    C0B   C811  -0.1836 
+      13    H0C   H812   0.0907 
+      14    H0D   H813   0.0907 
+      15    C0E   C814  -0.2418 
+      16    H0F   H815   0.0895 
+      17    H0G   H816   0.0895 
+      18    H0H   H817   0.0821 
+      19    H0I   H818   0.0821 
+      20    H0J   H819   0.0821 
+[bonds]
+     C01      C00
+     H02      C00
+     H03      C00
+     H04      C00
+     C05      C01
+     H06      C01
+     H07      C01
+     C08      C05
+     H09      C05
+     H0A      C05
+     C0B      C08
+     H0C      C08
+     H0D      C08
+     C0E      C0B
+     H0F      C0B
+     H0G      C0B
+     H0H      C0E
+     H0I      C0E
+     H0J      C0E
+[impropers]
+H03   C00   C01   H02 
+H04   C00   C01   H02 
+H06   C01   C00   C05 
+H07   C01   C00   C05 
+H09   C05   C01   C08 
+H0A   C05   C01   C08 
+H0C   C08   C05   C0B 
+H0D   C08   C05   C0B 
+H0F   C0B   C08   C0E 
+H0G   C0B   C08   C0E 
+H0I   C0E   C0B   H0H 
+H0J   C0E   C0B   H0H 
+[charge_groups]
+ C00 C01 H02 H03 H04 C05 H06 H07 C08 H09 H0A C0B H0C H0D C0E H0F H0G H0H H0I H0J
+*------------------------------------------------------------------

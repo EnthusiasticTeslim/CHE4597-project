@@ -1,0 +1,7 @@
+; ******* File C-C_long_dihs.itp *******
+; Krzysztof Murzyn, Maciej Bratek, and Marta Pasenkiewicz-Gierula
+; Refined OPLS All-Atom Force Field Parameters for n-Pentadecane,
+; Methyl Acetate, and Dimethyl Phosphate
+; J. Phys. Chem. B 2013, 117, 16388-16396
+#define HC_CT_CT_HC_long 3 0.3138 0.9414 0.0000 -1.2552 0.0000 0.0000
+#define CT_CT_CT_CT_long 3 2.209155 4.543825 0.77822 -7.5312 0.0000 0.0000

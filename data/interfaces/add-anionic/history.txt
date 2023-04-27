@@ -1,0 +1,12 @@
+gmx grompp -f minim.mdp -c ../../packmol/anionicInterface.gro -p topol.top -o em.tpr
+
+gmx density -f md_NVT.trr -s em.tpr -d Z -ng 4 -b 0 -dens mass -o density_mass_Z.xvg
+
+gmx density -f md_NVT.trr -s em.tpr -d Z -ng 4 -b 0 -dens number -o density_number_Z.xvg
+
+gmx rdf -f md_NVT.trr -s em.tpr -selrpos atom -seltype atom -pbc yes -excl yes -b 0 -n rdf.ndx -o rdf_Ion_HEX_ANI_Water.xvg -cn rdf_CN_Ion_HEX_ANI_Water.xvg -ref 15 -sel 4 13 14
+
+
+
+
+

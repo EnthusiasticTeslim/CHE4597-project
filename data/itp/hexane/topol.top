@@ -1,0 +1,15 @@
+;
+; Include forcefield parameters
+#include "oplsaa.ff/forcefield.itp"
+;
+; Include hexane_GMX.itp topology
+#include "HEX_54159C.itp"
+
+[ system ]
+; Name
+Hexane Water Interface 
+
+[ molecules ]
+; Compound #mols
+
+HEX 1

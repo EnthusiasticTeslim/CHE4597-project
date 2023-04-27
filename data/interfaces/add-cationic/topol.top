@@ -1,0 +1,20 @@
+;
+
+#include "/usr/local/gromacs/share/gromacs/top/oplsaa.ff/forcefield.itp"
+#include "/usr/local/gromacs/share/gromacs/top/oplsaa.ff/spce.itp"
+#include "/usr/local/gromacs/share/gromacs/top/oplsaa.ff/ions.itp"
+#include "cationic_GMX_OPLS.itp"
+#include "../hexane-water-inter/hexane.itp"
+
+[ system ]
+; Name
+Cationic at Interface
+
+[ molecules ]
+; Compound        #mols
+SOL             900
+CL              8
+CAT             16
+HEX             123
+SOL             900
+CL              8
