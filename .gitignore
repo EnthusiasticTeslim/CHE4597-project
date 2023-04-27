@@ -1,2 +1,4 @@
+*#
 *.pyc
-.DS_Store
+*.trr
+*.DS_Store

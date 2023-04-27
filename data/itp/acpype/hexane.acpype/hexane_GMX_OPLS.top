@@ -1,0 +1,14 @@
+; hexane_GMX_OPLS.top created by acpype (v: 2021-02-05T22:15:50CET) on Mon Apr  3 23:43:43 2023
+
+; Include forcefield parameters
+#include "oplsaa.ff/forcefield.itp"
+
+; Include hexane_GMX.itp topology
+#include "hexane_GMX.itp"
+
+[ system ]
+ hexane
+
+[ molecules ]
+; Compound        nmols
+ hexane           1     

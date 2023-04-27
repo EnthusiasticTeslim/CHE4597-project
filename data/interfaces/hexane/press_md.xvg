@@ -1,0 +1,25 @@
+# This file was created Sun Apr 23 19:36:34 2023
+# Created by:
+#                       :-) GROMACS - gmx energy, 2021 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /Users/admin/Documents/GitHub/CHE4597-project/data/interfaces/hexane
+# Command line:
+#   gmx energy -f md_0_1.edr -o press_md.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Glycine aRginine prOline Methionine Alanine Cystine Serine
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kg/m^3)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Density"
+    0.000000    0.032128

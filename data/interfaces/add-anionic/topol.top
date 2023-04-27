@@ -1,0 +1,20 @@
+;
+
+#include "/usr/local/gromacs/share/gromacs/top/oplsaa.ff/forcefield.itp"
+#include "/usr/local/gromacs/share/gromacs/top/oplsaa.ff/spce.itp"
+#include "/usr/local/gromacs/share/gromacs/top/oplsaa.ff/ions.itp"
+#include "anionic_GMX_OPLS.itp"
+#include "../hexane-water-inter/hexane.itp"
+
+[ system ]
+; Name
+Anionic at Interface
+
+[ molecules ]
+; Compound        #mols
+SOL             900
+NA              8
+HEX             123
+ANI             16
+SOL             900
+NA              8

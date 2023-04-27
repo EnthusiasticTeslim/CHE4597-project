@@ -1,0 +1,12 @@
+;
+
+#include "/usr/local/gromacs/share/gromacs/top/oplsaa.ff/forcefield.itp"
+#include "anionic_GMX_OPLS.itp"
+
+[ system ]
+; Name
+Anionic at Interface
+
+[ molecules ]
+; Compound        #mols
+ANI             1
